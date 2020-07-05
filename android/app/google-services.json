@@ -1,0 +1,83 @@
+{
+  "project_info": {
+    "project_number": "148330034281",
+    "firebase_url": "https://tido-trips.firebaseio.com",
+    "project_id": "tido-trips",
+    "storage_bucket": "tido-trips.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:148330034281:android:56096db72b0448ca5adef8",
+        "android_client_info": {
+          "package_name": "com.example.tido_herbz"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "148330034281-b3edsep8gbk78fidt0qjs074pgtsjc3q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDGNHg6umIIEU4ODXLdvoeBm4Z6c6Yq-Ac"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "148330034281-b3edsep8gbk78fidt0qjs074pgtsjc3q.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "148330034281-edtsvqn7bek2c46vjpi9gcrbtmpsf0kl.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.tidotrips.tidoherbz"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:148330034281:android:05a38d19ded6976e5adef8",
+        "android_client_info": {
+          "package_name": "com.tidotrips.tido_herbz"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "148330034281-b3edsep8gbk78fidt0qjs074pgtsjc3q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDGNHg6umIIEU4ODXLdvoeBm4Z6c6Yq-Ac"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "148330034281-b3edsep8gbk78fidt0qjs074pgtsjc3q.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "148330034281-edtsvqn7bek2c46vjpi9gcrbtmpsf0kl.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.tidotrips.tidoherbz"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
