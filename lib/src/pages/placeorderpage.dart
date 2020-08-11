@@ -13,6 +13,10 @@ import 'package:mailer/smtp_server.dart';
 
 import '../widgets/order_card.dart';
 
+import 'package:flutter_html/flutter_html.dart';
+import 'package:flutter_html/html_parser.dart';
+import 'package:flutter_html/style.dart';
+
 List<String> ptaeastsuburbs = [
   'Alphen Park',
   'Arcadia',
@@ -337,7 +341,8 @@ class _PlaceOrderPageState extends State<PlaceOrderPage> {
       ..recipients.add(user.email) //recipent email
       ..bccRecipients.add(Address(username)) //bcc Recipents emails
       ..subject = 'TidoTrips Order ${DateTime.now()}' //subject of the email
-      ..text = emailBody(_name, _phonenumber, user.email);
+      ..text = emailBody(_name, _phonenumber, user.email)
+      ..html = "<!DOCTYPE html><html><body><h2>Hello Swirry:</h2></body></html>";
 
     try {
       final sendReport = await send(message, smtpServer);
@@ -647,15 +652,15 @@ class _PlaceOrderPageState extends State<PlaceOrderPage> {
                 minWidth: 200.0,
                 child: RaisedButton(
                   onPressed: () {
-                    if (courierfee == 100 ||//this is what I commented out, only had main()
+                    /*if (courierfee == 100 ||//this is what I commented out, only had main()
                         widget.method == "Online Payment") {
                       Navigator.of(context).push(PageRouteBuilder(
                           opaque: false,
                           pageBuilder: (BuildContext context, _, __) =>
                               OnlinePage()));
-                    } else {
+                    } else {*/
                     main();
-                    }
+                    //}
                   },
                   child: Text(
                     'Place Order',

@@ -7,7 +7,7 @@ final categories = [
       categoryName: "Combos"),
   Category(
       numberOfItems: 5,
-      imagePath: "assets/images/edibles.jpg",
+      imagePath: "assets/images/muffin.jpg",
       categoryName: "Edibles"),
   Category(
       numberOfItems: 3,

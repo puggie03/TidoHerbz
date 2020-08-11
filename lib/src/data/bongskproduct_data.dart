@@ -3,7 +3,21 @@ import '../models/bongzkproduct_model.dart';
 final bongsProductlist = [
   BongsKSingle_Prod
   (
+    prod_name: "Rubber Pipe",
+    prod_picture: "assets/images/rubberpipe.jpg",
+    prod_price: 180,
+    prod_description: "Rubber Pipe with a hidden compartment",
+  ),
+  BongsKSingle_Prod
+  (
     prod_name: "Glass Pipe",
+    prod_picture: "assets/images/glasspipe.jpg",
+    prod_price: 150,
+    prod_description: "Glass Pipe for getting to the clouds in style",
+  ),
+  BongsKSingle_Prod
+  (
+    prod_name: "Glass Pipe Brown",
     prod_picture: "assets/images/bong-glass.jpeg",
     prod_price: 120,
     prod_description: "Glass Pipe for getting to the clouds in style",

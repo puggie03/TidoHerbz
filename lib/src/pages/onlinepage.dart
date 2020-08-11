@@ -1,7 +1,24 @@
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
+import 'package:flutter_html/flutter_html.dart';
+import 'package:flutter_html/html_parser.dart';
+import 'package:flutter_html/style.dart';
 
-const URL = "https://sandbox.payfast.co.za/eng/process?merchant_id=10016051&merchant_key=sdyya9iok9o1t&amount=150&item_name=Rubber+Pipe";
+const htmlData = """ 
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>HTML Forms</h2>
+<form action="https://sandbox.payfast.co.za/eng/process" method="POST">
+  <input type="hidden" name="merchant_id" value="10000100">
+  <input type="hidden" name="merchant_key" value="46f0cd694581a">
+  <input type="hidden" name="return_url" value="https://www.yoursite.com/return">
+  <input type="hidden" name="cancel_url" value="https://www.yoursite.com/cancel">
+  <input type="hidden" name="notify_url" value="https://www.yoursite.com/notify">
+</form>
+</body>
+</html>
+ """;
 
 class OnlinePage extends StatefulWidget {
   @override
@@ -16,37 +33,58 @@ class _OnlinePageState extends State<OnlinePage> {
     
   }
 
-  Future launchURL(String url) async{
-    if(await canLaunch(url)){
-      await launch(url, forceSafariVC: true, forceWebView: true);
-    }
-    else{
-      print("Can't Launch ${url}");
-    }
-  }
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context) => MaterialApp(
+        home: Scaffold(
+          appBar: AppBar(title: Text('Online Payment')),
+          body: Center(
+            child: RaisedButton(
+              child: Text('Proceed to Payment'),
+              onPressed: (){
+                
+                }
+            ),
+          ),
+        ),
+      );
+  /*Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("WebView"),
+        title: Text("Online Payment"),
       ),
-      body: Center(
-        child: Column(
-          children: <Widget>[
-            Container(
-              padding: EdgeInsets.all(10.0),
-              child: Text(URL),
+      body: SingleChildScrollView(
+        child: Html(
+          data: htmlData,
+          //Optional parameters:
+          /*style: {
+            "html": Style(
+              backgroundColor: Colors.black12,
+//              color: Colors.white,
             ),
-            RaisedButton(
-              child: Text("Open Link"),
-              onPressed: () {
-                launchURL(URL);
-              },
-              )
-          ],
-          )
+          },*/
+          customRender: {
+            "flutter": (RenderContext context, Widget child, attributes, _) {
+              return FlutterLogo(
+                style: (attributes['horizontal'] != null)
+                    ? FlutterLogoStyle.horizontal
+                    : FlutterLogoStyle.markOnly,
+                textColor: context.style.color,
+                size: context.style.fontSize.size * 5,
+              );
+            },
+          },
+          onLinkTap: (url) {
+            print("Opening $url...");
+          },
+          onImageTap: (src) {
+            print(src);
+          },
+          onImageError: (exception, stackTrace) {
+            print(exception);
+          },
+        ),
         ),
     );
-  }
+  }*/
 }

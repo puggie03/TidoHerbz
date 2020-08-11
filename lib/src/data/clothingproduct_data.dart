@@ -43,16 +43,4 @@ final clothingProductlist = [
     prod_price: 199,
     prod_description: "Tido Herbz t-shirt with dope High Right Now graphic, comes in red, white and black colors",
   ),
-  ClothingSingle_Prod(
-    prod_name: "TH Suede Caps",
-    prod_picture: "assets/images/suedecap.jpeg",
-    prod_price: 180,
-    prod_description: "Tido Herbz suede cap, comes in red, dark brown and light brown colors",
-  ),
-  ClothingSingle_Prod(
-    prod_name: "TH Brown Suede Cap",
-    prod_picture: "assets/images/cap-pipe.jpeg",
-    prod_price: 180,
-    prod_description: "Tido Herbz suede cap, comes in red, dark brown and light brown colors",
-  ),
 ];

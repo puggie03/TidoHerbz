@@ -52,9 +52,9 @@ class _CapsProductDetailsState extends State<CapsProductDetails> {
       _selectedText = "White";
       list = <String>['White', 'Black', 'Red'];
       
-    } else{
+    } else if(widget.product_detail_name == "TidoHerbz Beanie"){
       _selectedText = "Pink";
-      list = <String>['Grey', 'Orange', 'Lime'];
+      list = <String>['Pink','Grey', 'Orange', 'Lime'];
     }
   }
 

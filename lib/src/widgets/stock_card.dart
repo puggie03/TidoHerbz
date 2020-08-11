@@ -65,7 +65,7 @@ final int numberOfItems;
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
                       Text(categoryName, style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16.0),),
-                      Text("$numberOfItems Kinds",)
+                      //sText("$numberOfItems Kinds",)
                     ],
                   ),
                 ],
