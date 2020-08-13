@@ -9,7 +9,7 @@ final ediblesProductlist = [
   ),
   EdiblesSingle_Prod(
     prod_name: "Fudge",
-    prod_picture: "assets/images/fudge.jpeg",
+    prod_picture: "assets/images/fudge.jpg",
     prod_price: 50,
     prod_description: "Fudge deliciously medicated with 100mg, 250mg and 350mg THC infused",
   ),

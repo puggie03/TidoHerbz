@@ -2,22 +2,22 @@ import '../models/comboproduct_model.dart';
 
 final comboProductlist = [
   ComboSingle_Prod(
+    prod_name: "CBD Oil",
+    prod_picture: "assets/images/cbdoil.jpg",
+    prod_price: 250,
+    prod_description: "Cannabidiol (CBD) oil is a product that's derived from cannabis. It's a type of cannabinoid, which are the chemicals naturally found in marijuana plants."
+  ),
+  ComboSingle_Prod(
     prod_name: "Tido Combo",
-    prod_picture: "assets/images/tidocombo.jpg",
-    prod_price: 480,
-    prod_description: "Brownie, 1g Indoor, 300mg Lollipops, Complimentary 6g GreenHouse"
+    prod_picture: "assets/images/combo.jpg",
+    prod_price: 300,
+    prod_description: "4 Muffins 100mg, 2 Lollipops 100mg and 2 packs of fudge 100mg"
   ),
   ComboSingle_Prod(
-    prod_name: "Kush Combo",
-    prod_picture: "assets/images/tidocombo.jpg",
-    prod_price: 450,
-    prod_description: "2g Indoor, 2x 100mg Lollipops, 4g Exotic GreenHouse"
-  ),
-  ComboSingle_Prod(
-    prod_name: "Bob Marley Combo",
-    prod_picture: "assets/images/bobcombo.jpg",
-    prod_price: 900,
-    prod_description: "2g Indoor, 10g Exotic GreenHouse, 4x 300mg Lollipops, Brownies(6) 300mg"
+    prod_name: "Party Pack",
+    prod_picture: "assets/images/combo.jpg",
+    prod_price: 800,
+    prod_description: "6 Muffins, 6 Lollipops, 6 fudge packs and 12g Greenhouse Pineapple Express"
   ),
   ComboSingle_Prod(
     prod_name: "TH Box",

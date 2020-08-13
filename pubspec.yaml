@@ -40,9 +40,7 @@ dependencies:
 
   flutter_typeahead: ^1.8.0
 
-  firebase_messaging: ^6.0.12
-
-  flutter_html: ^1.0.0
+  firebase_messaging: ^6.0.16
 
   
   

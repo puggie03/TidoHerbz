@@ -13,10 +13,6 @@ import 'package:mailer/smtp_server.dart';
 
 import '../widgets/order_card.dart';
 
-import 'package:flutter_html/flutter_html.dart';
-import 'package:flutter_html/html_parser.dart';
-import 'package:flutter_html/style.dart';
-
 List<String> ptaeastsuburbs = [
   'Alphen Park',
   'Arcadia',
@@ -262,66 +258,99 @@ class _PlaceOrderPageState extends State<PlaceOrderPage> {
     String gram;
     String color;
     String strain;
+    String sizeword;
+    String gramword;
+    String colorword;
+    String strainword;
     // print("name asseblief: " + _name);
     if(courierfee == 100){
-      email = "COURIER ORDER:\n\n";
+      email = "<h4>COURIER ORDER:</h4>";
     }
     else{
-      email = "YOUR ORDER:\n\n";
+      email = "<h4>YOUR ORDER:</h4>";
     }
     if (items.length > 0) {
       for (var item in items) {
         if (item.cartpage_prod_size != null) {
           size = item.cartpage_prod_size;
+          sizeword = "Size: ";
         } else {
           size = "";
+          sizeword = "";
         }
         if (item.cartpage_prod_gram != null) {
           gram = item.cartpage_prod_gram;
+          gramword = "Grams: ";
         } else {
           gram = "";
+          gramword = "";
         }
         if (item.cartpage_prod_color != null) {
           color = item.cartpage_prod_color;
+          colorword = "Color: ";
         } else {
           color = "";
+          colorword = "";
         }
         if (item.cartpage_prod_strain != null) {
           strain = item.cartpage_prod_strain;
+          strainword = "Strain: ";
         } else {
           strain = "";
+          strainword = "";
         }
-        email += item.cartpage_prod_name +
-            '\n' +
-            'R' +
+        email += '<p><b>Item: </b>'+item.cartpage_prod_name +
+            '</p>' +
+            '<p><b>Price: </b>R' +
             item.cartpage_prod_price.toString() +
-            '\n' +
+            '</p>' +
+            '<p><b>'   +
+            strainword +
+            '</b>' +
             strain +
-            '\n' +
+            '</p>' +
+            '<p><b>'   +
+            sizeword +
+            '</b>' +
             size +
-            '\n' +
+            '</p>' +
+            '<p><b>' +
+            gramword +
+            '</b>' +
             gram +
-            '\n' +
+            '</p>' +
+            '<p><b>' +
+            colorword +
+            '</b>' +
             color +
-            '\n' +
-            '-------------------------------------------------------------------------\n';
+            '</p>';
       }
-      email += 'Courier Fee: R' +
+      email += '<p>Courier Fee: R' +
           courierfee.toString() +
-          '\nDelivery Fee: R' +
+          '</p>'
+          '<p>Delivery Fee: R' +
           delfee.toString() +
-          '\nTotal: R' +
+          '</p>'
+          '<p><b>Total: R' +
           calculateGrandTotal().toString() +
-          '\nPayment Method: ' +
+          '</b></p>'
+          '<p>Payment Method: ' +
           widget.method +
-          '\n\nAddress: ' +
+          '</p>'
+          '<p>Address: ' +
           widget.place +
-          '\nUser: ' +
+          '</p>'
+          '<p>User: ' +
           name +
-          '\nEmail: ' +
+          '</p>'
+          '<p>Email: ' +
           useremail +
-          '\nPhone: ' +
-          phonenumber;
+          '</p>'
+          '<p>Phone: ' +
+          phonenumber +
+          '</p>'
+          '<br/>' +
+          '<p><b>Tido Trips Team</b></p>';
       return email;
     }
     return "";
@@ -329,6 +358,7 @@ class _PlaceOrderPageState extends State<PlaceOrderPage> {
 
   emailSetup(String _name, String _phonenumber) async {
     String username = "orders@tidotrips.com";
+    String name = "Orders Tido Trips";
     String password = "TidoOrders321";
 
     FirebaseUser user = await firebaseAuth.currentUser();
@@ -337,12 +367,12 @@ class _PlaceOrderPageState extends State<PlaceOrderPage> {
 
     // Create our email message.
     final message = Message()
-      ..from = Address(username)
+      ..from = Address(username,name)
       ..recipients.add(user.email) //recipent email
       ..bccRecipients.add(Address(username)) //bcc Recipents emails
-      ..subject = 'TidoTrips Order ${DateTime.now()}' //subject of the email
-      ..text = emailBody(_name, _phonenumber, user.email)
-      ..html = "<!DOCTYPE html><html><body><h2>Hello Swirry:</h2></body></html>";
+      ..subject = 'TidoTrips Order (${DateTime.now()})' //subject of the email
+      //..text = emailBody(_name, _phonenumber, user.email)
+      ..html = emailBody(_name, _phonenumber, user.email);
 
     try {
       final sendReport = await send(message, smtpServer);
