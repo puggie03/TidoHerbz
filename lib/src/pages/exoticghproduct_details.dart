@@ -237,7 +237,7 @@ class _ExoticGHProductDetailsState extends State<ExoticGHProductDetails> {
               Expanded(
                 child: MaterialButton(
                   onPressed: () {
-                    TimeOfDay tod = TimeOfDay.now();
+                    /*TimeOfDay tod = TimeOfDay.now();
                     //print("Before tod.hour: " + tod.hour.toString());
                     if (tod.hour < 9 || tod.hour > 19) {
                       //print("tod.hour: " + tod.hour.toString());
@@ -258,7 +258,7 @@ class _ExoticGHProductDetailsState extends State<ExoticGHProductDetails> {
                               ],
                             );
                           });
-                    } else {
+                    } else {*/
                       Navigator.push(
                         context,
                         MaterialPageRoute(
@@ -292,7 +292,7 @@ class _ExoticGHProductDetailsState extends State<ExoticGHProductDetails> {
                               ],
                             );
                           });
-                    }
+                    //}
                   },
                   color: Colors.black,
                   textColor: Colors.white,

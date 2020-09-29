@@ -284,7 +284,7 @@ class _ClothingProductDetailsState extends State<ClothingProductDetails> {
               Expanded(
                 child: MaterialButton(
                   onPressed: () {
-                    TimeOfDay tod = TimeOfDay.now();
+                    /*TimeOfDay tod = TimeOfDay.now();
                     //print("Before tod.hour: " + tod.hour.toString());
                     if (tod.hour < 9 || tod.hour > 20) {
                       //print("tod.hour: " + tod.hour.toString());
@@ -305,7 +305,7 @@ class _ClothingProductDetailsState extends State<ClothingProductDetails> {
                               ],
                             );
                           });
-                    } else {
+                    } else {*/
                       Navigator.push(
                         context,
                         MaterialPageRoute(
@@ -341,7 +341,7 @@ class _ClothingProductDetailsState extends State<ClothingProductDetails> {
                               ],
                             );
                           });
-                    }
+                    //}
                   },
                   color: Colors.black,
                   textColor: Colors.white,

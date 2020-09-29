@@ -361,7 +361,7 @@ class _ShroomsProductDetailsState extends State<ShroomsProductDetails> {
               Expanded(
                 child: MaterialButton(
                   onPressed: () {
-                    TimeOfDay tod = TimeOfDay.now();
+                    /*TimeOfDay tod = TimeOfDay.now();
                     //print("Before tod.hour: " + tod.hour.toString());
                     if (tod.hour < 9 || tod.hour > 19) {
                       //print("tod.hour: " + tod.hour.toString());
@@ -382,7 +382,7 @@ class _ShroomsProductDetailsState extends State<ShroomsProductDetails> {
                               ],
                             );
                           });
-                    } else {
+                    } else {*/
                       if (_selectedGram == "1g" &&
                           _selectedType == "Penis Envy") {
                         widget.product_detail_price = 150;
@@ -532,7 +532,7 @@ class _ShroomsProductDetailsState extends State<ShroomsProductDetails> {
                               ],
                             );
                           });
-                    }
+                    //}
                   },
                   color: Colors.black,
                   textColor: Colors.white,

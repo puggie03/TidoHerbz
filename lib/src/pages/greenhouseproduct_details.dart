@@ -240,7 +240,7 @@ class _GreenHouseProductDetailsState extends State<GreenHouseProductDetails> {
               Expanded(
                 child: MaterialButton(
                   onPressed: () {
-                    TimeOfDay tod = TimeOfDay.now();
+                    /*TimeOfDay tod = TimeOfDay.now();
                     //print("Before tod.hour: " + tod.hour.toString());
                     if (tod.hour < 9 || tod.hour > 19) {
                       //print("tod.hour: " + tod.hour.toString());
@@ -261,7 +261,7 @@ class _GreenHouseProductDetailsState extends State<GreenHouseProductDetails> {
                               ],
                             );
                           });
-                    } else {
+                    } else {*/
                       Navigator.push(
                         context,
                         MaterialPageRoute(
@@ -296,7 +296,7 @@ class _GreenHouseProductDetailsState extends State<GreenHouseProductDetails> {
                               ],
                             );
                           });
-                    }
+                    //}
                   },
                   color: Colors.black,
                   textColor: Colors.white,
